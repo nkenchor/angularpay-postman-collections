@@ -1,0 +1,429 @@
+{
+	"info": {
+		"_postman_id": "43523c1e-be75-40e7-b194-a54597464ef8",
+		"name": "ANGULARPAY - API - SCHEDULER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create schedule",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"scheduleReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"my scheduled pmt post\", \r\n    \"action_endpoint\": \"http://localhost:20350/pmt/requests\",\r\n    \"payload\": \"{\\\"amount\\\":{\\\"currency\\\":\\\"GBP\\\",\\\"value\\\":\\\"54000\\\"},\\\"beneficiary_reference\\\":\\\"30fd3654-af11-4c25-b044-f94c2315d927\\\",\\\"exchange_rate\\\":{\\\"from\\\":\\\"GBP\\\",\\\"to\\\":\\\"NGN\\\",\\\"rate\\\":\\\"500\\\",\\\"date\\\":\\\"2018-02-13\\\",\\\"type\\\":\\\"OFFICIAL_RATE\\\"}}\",\r\n    \"run_at\": \"2021-12-07T18:24:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/scheduler/schedules",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"scheduler",
+						"schedules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update schedule",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"description\": \"my scheduled pmt post\", \r\n    \"action_endpoint\": \"http://localhost:20350/pmt/requests\",\r\n    \"payload\": \"{\\\"amount\\\":{\\\"currency\\\":\\\"GBP\\\",\\\"value\\\":\\\"54000\\\"},\\\"beneficiary_reference\\\":\\\"30fd3654-af11-4c25-b044-f94c2315d927\\\",\\\"exchange_rate\\\":{\\\"from\\\":\\\"GBP\\\",\\\"to\\\":\\\"NGN\\\",\\\"rate\\\":\\\"500\\\",\\\"date\\\":\\\"2018-02-13\\\",\\\"type\\\":\\\"OFFICIAL_RATE\\\"}}\",\r\n    \"run_at\": \"2021-12-07T11:58:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/scheduler/schedules/{{scheduleReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"scheduler",
+						"schedules",
+						"{{scheduleReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run schedue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/scheduler/schedules/{{scheduleReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"scheduler",
+						"schedules",
+						"{{scheduleReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get schedule by reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/scheduler/schedules/{{scheduleReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"scheduler",
+						"schedules",
+						"{{scheduleReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get schedule by reference Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/scheduler/schedules/list/page/0",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"scheduler",
+						"schedules",
+						"list",
+						"page",
+						"0"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "https://api.angularpay.io"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-imei"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		},
+		{
+			"key": "serviceReference",
+			"value": "1b6509e2-2237-4870-a8a2-bcb0ef621182"
+		},
+		{
+			"key": "featureServiceReference",
+			"value": "005506be-4423-44b4-89d5-b3ae51a9b759"
+		},
+		{
+			"key": "subscriptionReference",
+			"value": ""
+		},
+		{
+			"key": "webContentReference",
+			"value": ""
+		},
+		{
+			"key": "client_reference",
+			"value": ""
+		},
+		{
+			"key": "angularpay-api-gateway",
+			"value": "http://localhost:20430",
+			"disabled": true
+		},
+		{
+			"key": "response_otp_code",
+			"value": ""
+		},
+		{
+			"key": "scheduleReference",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,693 @@
+{
+	"info": {
+		"_postman_id": "38fd31d2-5981-4ba3-b125-e50bc546cac3",
+		"name": "ANGULARPAY - API - ONBOARDING",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Onboarding Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.globals.set(\"angularpay_access_token\", data.access_token);\r",
+							"pm.globals.set(\"angularpay_refresh_token\", data.refresh_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-authentication",
+						"value": "MOBILE_USER_ONBOARDING",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"{{angularpay-device-id}}\",\r\n    \"password\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkASHEf++FGaqeMAqKuTI9x8YFHC4jCwr8WVQ2YwsQLosdDYyetDTSWrTow/QbttTIlfa9ZV4EIN0ADJ85jaZttcfDPuYxP4OlgZ+H+6j7H0gCM38k+TRdcxHEAd6c3mOPYr6B0YgM3p7vFvmulQTsamS+QMVP1TTQpZGvwNBx5ROSFvzqvzfm3QUmJnlU3f9vAqu49az0UJlsSm0aCRGshvakyAKFtsAYpp3SVIbUw421jLMbVyf2irPvZOMCg0M2uX7NZoZORhenGQFj29awl+o9A7p//SzXw/iAFUififqr1u/NyLOIiAi62liHRYxZgEDHhMqDqC7UoZ5uONskwIDAQAB\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/identity/auth/login",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"identity",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onboarding Login - local",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.globals.set(\"angularpay_access_token\", data.access_token);\r",
+							"pm.globals.set(\"angularpay_refresh_token\", data.refresh_token);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-authentication",
+						"value": "MOBILE_USER_ONBOARDING",
+						"type": "text"
+					},
+					{
+						"key": "X-Forwarded-For",
+						"value": "86.99.101.169, 86.99.101.170, 86.99.101.171",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"{{angularpay-device-id}}\",\r\n    \"password\": \"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkASHEf++FGaqeMAqKuTI9x8YFHC4jCwr8WVQ2YwsQLosdDYyetDTSWrTow/QbttTIlfa9ZV4EIN0ADJ85jaZttcfDPuYxP4OlgZ+H+6j7H0gCM38k+TRdcxHEAd6c3mOPYr6B0YgM3p7vFvmulQTsamS+QMVP1TTQpZGvwNBx5ROSFvzqvzfm3QUmJnlU3f9vAqu49az0UJlsSm0aCRGshvakyAKFtsAYpp3SVIbUw421jLMbVyf2irPvZOMCg0M2uX7NZoZORhenGQFj29awl+o9A7p//SzXw/iAFUififqr1u/NyLOIiAi62liHRYxZgEDHhMqDqC7UoZ5uONskwIDAQAB\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:20260/identity/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "20260",
+					"path": [
+						"identity",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"requestReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"phone\": \"+971554968139\",\r\n    \"email\": \"dornu@angularpay.com\",\r\n    \"device\": {\r\n        \"type\": \"MOBILE\",\r\n        \"device_id\": \"{{angularpay-device-id}}\",\r\n        \"brand\": \"IPhone\",\r\n        \"model\": \"iPhone 13 Pro Max\",\r\n        \"os_version\": \"15.1\",\r\n        \"language\": \"en-us\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm signup",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"otp\": \"12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups/{{requestReference}}/confirm-signup",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups",
+						"{{requestReference}}",
+						"confirm-signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"dee@deekingngbor.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups/{{requestReference}}/update-email",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups",
+						"{{requestReference}}",
+						"update-email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Onboard user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"Dornu\",\r\n    \"lastname\": \"Ngbor\",\r\n    \"username\": \"dornu@angularpay.com\",\r\n    \"password\": \"1qaz!QAZ\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups/{{requestReference}}/onboard",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups",
+						"{{requestReference}}",
+						"onboard"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups/{{requestReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups",
+						"{{requestReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get signup list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups/list/page/0",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups",
+						"list",
+						"page",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get statistics",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups/statistics",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups",
+						"statistics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Resend OTP",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/onboarding/signups/{{requestReference}}/resend-otp",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"onboarding",
+						"signups",
+						"{{requestReference}}",
+						"resend-otp"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "https://api.angularpay.io"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "onboarding-auth-dornu-device-imei"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		}
+	]
+}

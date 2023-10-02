@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "b35fd819-8b20-4e55-a8eb-4a9e537694f6",
+		"name": "ANGULARPAY - API - FOREX",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get latest rate for currency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/forex/query/currencies/USD",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"forex",
+						"query",
+						"currencies",
+						"USD"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get historical rate for currency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/forex/query/currencies/USD/date/2022-01-06",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"forex",
+						"query",
+						"currencies",
+						"USD",
+						"date",
+						"2022-01-06"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get latest rate for currency list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/forex/query/list/USD,AED",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"forex",
+						"query",
+						"list",
+						"USD,AED"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Convert currency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/forex/query/convert/from/USD/to/AED/amount/1000?date=2013-09-01",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"forex",
+						"query",
+						"convert",
+						"from",
+						"USD",
+						"to",
+						"AED",
+						"amount",
+						"1000"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2013-09-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get historical trend for currency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/forex/query/trends/currencies/USD/from-date/2022-01-01/to-date/2022-01-07",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"forex",
+						"query",
+						"trends",
+						"currencies",
+						"USD",
+						"from-date",
+						"2022-01-01",
+						"to-date",
+						"2022-01-07"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "https://api.angularpay.io"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-imei"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		},
+		{
+			"key": "serviceReference",
+			"value": "1b6509e2-2237-4870-a8a2-bcb0ef621182"
+		},
+		{
+			"key": "featureServiceReference",
+			"value": "005506be-4423-44b4-89d5-b3ae51a9b759"
+		}
+	]
+}

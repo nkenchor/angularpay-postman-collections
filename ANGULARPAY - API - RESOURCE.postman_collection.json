@@ -1,0 +1,489 @@
+{
+	"info": {
+		"_postman_id": "7eca1957-7dbe-4f22-af1b-420c2e0a4cb7",
+		"name": "ANGULARPAY - API - RESOURCE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"resourceReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test-resource\",\r\n    \"base_64_image_string\": \"iVBORw0KGgoAAAANSUhEUgAAAXcAAAMs...\",\r\n    \"type\": \"PNG\",\r\n    \"category\": \"corporate-site-home-page\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/resources",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"resources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Resource",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test-resource\",\r\n    \"base_64_image_string\": \"iVBORw0KGgoAAAANSUhEUgAAAXcAAAMs...\",    \r\n    \"type\": \"PNG\",\r\n    \"category\": \"corporate-site-home-page\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/resources/{{resourceReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"resources",
+						"{{resourceReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get resource by reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/resources/{{resourceReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"resources",
+						"{{resourceReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get resource by name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/resources/name/be-still",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"resources",
+						"name",
+						"be-still"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get resource by category",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/resources/category/bible-verse",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"resources",
+						"category",
+						"bible-verse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get resource list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/resources",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"resources"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "https://api.angularpay.io"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-imei"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		},
+		{
+			"key": "serviceReference",
+			"value": "1b6509e2-2237-4870-a8a2-bcb0ef621182"
+		},
+		{
+			"key": "featureServiceReference",
+			"value": "005506be-4423-44b4-89d5-b3ae51a9b759"
+		},
+		{
+			"key": "subscriptionReference",
+			"value": ""
+		},
+		{
+			"key": "webContentReference",
+			"value": ""
+		},
+		{
+			"key": "resourceReference",
+			"value": ""
+		}
+	]
+}

@@ -1,0 +1,445 @@
+{
+	"info": {
+		"_postman_id": "3579b822-5392-4d96-ba53-1d39230cf639",
+		"name": "ANGULARPAY - API - CMS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create web content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"webContentReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\": \"about-us\",\r\n    \"section\": \"our-mission\",\r\n    \"content\": \"our mission is to make life easier for everyone\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cms",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update web content",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\": \"about-us\",\r\n    \"section\": \"our-mission\",\r\n    \"content\": \"our mission is to make life easier for everyone - absolutely, everyone!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cms/{{webContentReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cms",
+						"{{webContentReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get web content by reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cms/{{webContentReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cms",
+						"{{webContentReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get web content by page and section",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cms/page/about-us/section/our-mission",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cms",
+						"page",
+						"about-us",
+						"section",
+						"our-mission"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get web content by page",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cms/page/about-us",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cms",
+						"page",
+						"about-us"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get web content list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cms",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cms"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "https://api.angularpay.io"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-imei"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		},
+		{
+			"key": "serviceReference",
+			"value": "1b6509e2-2237-4870-a8a2-bcb0ef621182"
+		},
+		{
+			"key": "featureServiceReference",
+			"value": "005506be-4423-44b4-89d5-b3ae51a9b759"
+		},
+		{
+			"key": "subscriptionReference",
+			"value": ""
+		},
+		{
+			"key": "webContentReference",
+			"value": ""
+		}
+	]
+}

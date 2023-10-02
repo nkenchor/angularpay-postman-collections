@@ -1,0 +1,1721 @@
+{
+	"info": {
+		"_postman_id": "6505e209-46bf-4e97-a975-a8e20084939f",
+		"name": "ANGULARPAY - API - USER CONFIG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"userReference\", data.reference);\r",
+							"pm.collectionVariables.set(\"angularpay-user-reference\", data.reference);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var uuid = require('uuid');\r",
+							"var onboardingReference = uuid.v4();\r",
+							"pm.collectionVariables.set(\"onboardingReference\", onboardingReference);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"onboarding_reference\": \"{{onboardingReference}}\",\r\n    \"user_profile\": {\r\n        \"username\": \"dornu@dornu.com\",\r\n        \"handle\": \"@dornu\",\r\n        \"firstname\": \"Dornu\",\r\n        \"lastname\": \"Ngbor\",\r\n        \"date_of_birth\": \"02/07/1900\",\r\n        \"phone\": \"+971555555555\",\r\n        \"email\": \"dornu@dornu.com\"\r\n    },\r\n    \"device\": {\r\n        \"reference\": \"250e99ae-f246-4fd5-b030-a7b35a45f2c5\",\r\n        \"type\": \"MOBILE\",\r\n        \"device_id\": \"device-imei-serial-number\",\r\n        \"session_id\": \"bc3ed91d-9a1c-421c-99ab-a5518b85e64f\",\r\n        \"brand\": \"IPhone\",\r\n        \"model\": \"iPhone 7\",\r\n        \"os_version\": \"4.4.2\",\r\n        \"language\": \"en-us\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/enable/true",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"enable",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstname\": \"Dee\",\r\n    \"lastname\": \"King\",\r\n    \"date_of_birth\": \"02/07/1900\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/profile",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user configuration - rollback on -on-boarding error",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"addressReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"UAE\",\r\n    \"state\": \"Dubai\",\r\n    \"city\": \"Dubai\",\r\n    \"address_lines\": [\r\n        \"Dubai Arabian Ranches\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/addresses",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"addresses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"country\": \"UAE\",\r\n    \"state\": \"Abu Dhabi\",\r\n    \"city\": \"Abu Dhabi\",\r\n    \"address_lines\": [\r\n        \"Abu Dhabi Hills\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/addresses/{{addressReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"addresses",
+						"{{addressReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete address",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/addresses/{{addressReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"addresses",
+						"{{addressReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable 2FA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/security/2FA/enable/true",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"security",
+						"2FA",
+						"enable",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable transaction PIN",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/security/transaction-pin/enable/true",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"security",
+						"transaction-pin",
+						"enable",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add bank accounts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"bankAccountReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"integration_type\": \"API_INTEGRATION\",\r\n    \"integration_reference\": \"cfafbb8a-35f1-4dea-8cab-f0cd67806615\",\r\n    \"account_name\": \"Dornu Ngbor\",\r\n    \"account_number\": \"1234567890\",\r\n    \"iban\": \"AE341234567890\",\r\n    \"bank_reference\": \"7c0d6636-ca94-4300-b001-84fe5f808a30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/bank-accounts",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"bank-accounts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update bank account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"integration_type\": \"API_INTEGRATION\",\r\n    \"integration_reference\": \"cfafbb8a-35f1-4dea-8cab-f0cd67806615\",\r\n    \"account_name\": \"Dornubari King Ngbor\",\r\n    \"account_number\": \"0987654321\",\r\n    \"iban\": \"AE341234567890\",\r\n    \"bank_reference\": \"7c0d6636-ca94-4300-b001-84fe5f808a30\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/bank-accounts/{{bankAccountReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"bank-accounts",
+						"{{bankAccountReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete bank account",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/bank-accounts/{{bankAccountReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"bank-accounts",
+						"{{bankAccountReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add newsfeed preference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"serviceReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_reference\": \"97d758db-63d7-4a78-9e92-68f2d0969db6\",\r\n    \"show_in_newsfeed\": true,\r\n    \"only_show_status_types\": [\r\n        \"ACTIVE\",\r\n        \"INACTIVE\",\r\n        \"COMPLETED\",\r\n        \"CANCELLED\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/newsfeed-preferences",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"newsfeed-preferences"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update newsfeed preference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_reference\": \"97d758db-63d7-4a78-9e92-68f2d0969db6\",\r\n    \"show_in_newsfeed\": true,\r\n    \"only_show_status_types\": [\r\n        \"ACTIVE\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/newsfeed-preferences/{{serviceReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"newsfeed-preferences",
+						"{{serviceReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add service subscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"serviceReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"service_reference\": \"87d90d0a-1457-4dbd-a382-df8a741c3cf0\",\r\n    \"subscribe\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/service-configurations",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"service-configurations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update service subscription",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"subscribe\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/service-configurations/{{serviceReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"service-configurations",
+						"{{serviceReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Set smart save configuration",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bank_debit_notification_phone\": \"+971555555555\",\r\n    \"smart_save_goals\": [\r\n        {\r\n            \"from\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"to\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500\r\n            },\r\n            \"percent_to_save\": 5\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/smart-save-configuration",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"smart-save-configuration"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update income",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"frequency\": \"MONTHLY\",\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": \"50000\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/income",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"income"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update notification options",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"push_notification_enabled\": false,\r\n    \"notification_type\": \"RING_AND_VIBRATE\",\r\n    \"otp_type\": \"SEND_AS_SMS_ONLY\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/notification",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"notification"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add KYC identification",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"identificationReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"INTERNATIONAL_PASSPORT\",\r\n    \"passport_number\": \"A001987654321\",\r\n    \"expiry\": \"12/12/2025\",\r\n    \"document_reference\": \"d1f2ac11-7e3c-4f9f-a5cf-ed697d461e56\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/kyc-identifications",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"kyc-identifications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update KYC identification",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\": \"INTERNATIONAL_PASSPORT\",\r\n    \"passport_number\": \"A001987651122\",\r\n    \"expiry\": \"12/12/2025\",\r\n    \"document_reference\": \"d1f2ac11-7e3c-4f9f-a5cf-ed697d461e56\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/kyc-identifications/{{identificationReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"kyc-identifications",
+						"{{identificationReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete KYC identification",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/kyc-identifications/{{identificationReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"kyc-identifications",
+						"{{identificationReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update KYC status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"is_verified\": true,\r\n    \"verification_method\": \"BACKGROUND_CHECK\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/kyc-status",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"kyc-status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user details by reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user details by email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/email/dornu@angularpay.com",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"email",
+						"dornu@angularpay.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user details by phone",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/phone/+971554968139",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"phone",
+						"+971554968139"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/list/page/0",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"list",
+						"page",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user profile",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/accounts/{{userReference}}/profile",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"accounts",
+						"{{userReference}}",
+						"profile"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Peer Lookup Reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"peerLookupReference\", data.reference);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/peer-lookup",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"peer-lookup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Peer Lookup By Reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/user-configuration/peer-lookup/{{peerLookupReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"user-configuration",
+						"peer-lookup",
+						"{{peerLookupReference}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "https://api.angularpay.io"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-imei"
+		},
+		{
+			"key": "peerLookupReference",
+			"value": ""
+		}
+	]
+}

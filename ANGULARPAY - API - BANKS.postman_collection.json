@@ -1,0 +1,703 @@
+{
+	"info": {
+		"_postman_id": "5f4accfe-a17e-4c60-a2e1-d1df1ccc4e2f",
+		"name": "ANGULARPAY - API - BANKS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create bank",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"bankReference\", data.reference);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"AngularPay Bank\",\r\n    \"city\": \"Dubai\",\r\n    \"branch\": \"Dubai Main Branch\",\r\n    \"country_reference\": \"e814f065-f514-4152-9d62-003b6a6c5f77\",\r\n    \"address\": \"AngularPay street Texas\",\r\n    \"swift_code\": \"AST101\",\r\n    \"enabled\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update bank",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"AngularPay Global Bank\",\r\n    \"city\": \"Dubai\",\r\n    \"branch\": \"Dubai Main Branch\",\r\n    \"country_reference\": \"e814f065-f514-4152-9d62-003b6a6c5f77\",\r\n    \"address\": \"AngularPay street Texas\",\r\n    \"swift_code\": \"AST101\",\r\n    \"enabled\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/{{bankReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"{{bankReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable bank",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Make Life Easier\",\r\n    \"image\": \"base64encodedString\",\r\n    \"summary\": \"Make Life Easier\",\r\n    \"link\": \"https://angularpay.io/\",\r\n    \"author\": {\r\n        \"name\": \"Dornubari Ngbor\",\r\n        \"bio\": \"Co-founder, AngularPay\",\r\n        \"avatar\": \"base64encodedString\"\r\n    },\r\n    \"blog_post_published_on\": \"2021-11-30T12:00:00Z\",\r\n    \"blog_post_last_updated\": \"2021-11-30T12:00:00Z\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/{{bankReference}}/enable/true",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"{{bankReference}}",
+						"enable",
+						"true"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get bank by reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/{{bankReference}}",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"{{bankReference}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find bank by name",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/bank-name/emirates",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"bank-name",
+						"emirates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find bank by swift code",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/swift-code/AST101",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"swift-code",
+						"AST101"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get bank list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/list/page/0",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"list",
+						"page",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get banks by reference list",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/list/92247bdb-47c4-47d7-a33b-ee671875c764,a659edb4-553a-45f3-8249-af21433b96f1",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"list",
+						"92247bdb-47c4-47d7-a33b-ee671875c764,a659edb4-553a-45f3-8249-af21433b96f1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get banks by country reference",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{angularpay_access_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-agent",
+						"value": "AngularPay-React-Native-Client-v1.0-M51316",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/banks/entities/list/country/6b8a2fb5-fa4b-468c-aded-9c32f6fd7b4f",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"banks",
+						"entities",
+						"list",
+						"country",
+						"6b8a2fb5-fa4b-468c-aded-9c32f6fd7b4f"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "https://api.angularpay.io"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "dornu@angularpay.com"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-imei"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		},
+		{
+			"key": "serviceReference",
+			"value": "1b6509e2-2237-4870-a8a2-bcb0ef621182"
+		},
+		{
+			"key": "featureServiceReference",
+			"value": "005506be-4423-44b4-89d5-b3ae51a9b759"
+		},
+		{
+			"key": "subscriptionReference",
+			"value": ""
+		},
+		{
+			"key": "20600",
+			"value": "20600"
+		},
+		{
+			"key": "inquiryReference",
+			"value": ""
+		},
+		{
+			"key": "blogPostReference",
+			"value": ""
+		},
+		{
+			"key": "bankReference",
+			"value": ""
+		}
+	]
+}

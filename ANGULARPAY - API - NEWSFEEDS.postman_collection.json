@@ -1,0 +1,254 @@
+{
+	"info": {
+		"_postman_id": "efead76b-fb66-4e2b-bc80-a5c1c0c54045",
+		"name": "ANGULARPAY - API - NEWSFEEDS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get newsfeeds",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/newsfeed/requests/page/0",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"newsfeed",
+						"requests",
+						"page",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get newsfeeds by service type",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/newsfeed/requests/page/0/filter/services/PMT,MNL,SUP",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"newsfeed",
+						"requests",
+						"page",
+						"0",
+						"filter",
+						"services",
+						"PMT,MNL,SUP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get newsfeeds by status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/newsfeed/requests/page/0/filter/statuses/ACTIVE,COMPLETED",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"newsfeed",
+						"requests",
+						"page",
+						"0",
+						"filter",
+						"statuses",
+						"ACTIVE,COMPLETED"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get newsfeeds by service type and status",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/newsfeed/requests/page/0/filter/services/PMT,MNL/statuses/ACTIVE,COMPLETED",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"newsfeed",
+						"requests",
+						"page",
+						"0",
+						"filter",
+						"services",
+						"PMT,MNL",
+						"statuses",
+						"ACTIVE,COMPLETED"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "http://localhost:20410"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "8d5b68de-9bae-4264-a8a5-365f29c5a749"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-id-001"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		},
+		{
+			"key": "templateReference",
+			"value": ""
+		}
+	]
+}

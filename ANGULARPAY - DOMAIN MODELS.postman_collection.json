@@ -1,0 +1,1448 @@
+{
+	"info": {
+		"_postman_id": "d1c59391-3346-4b81-9e0d-7710c0b03f71",
+		"name": "ANGULARPAY - DOMAIN MODELS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "userconfig-service",
+			"item": [
+				{
+					"name": "user configuration - full",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"1bbc139f-c44e-44cf-80c7-0fa2d663d413\",\r\n    \"onboarding_reference\": \"cf384ac3-9a48-46af-b85f-76cf5e0073cc\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"enabled\": true,\r\n    \"user_profile\": {\r\n        \"username\": \"dornu@dornu.com\",\r\n        \"handle\": \"@dornu\",\r\n        \"firstname\": \"Dornu\",\r\n        \"lastname\": \"Ngbor\",\r\n        \"date_of_birth\": \"02/07/1900\",\r\n        \"phone\": \"+971555555555\",\r\n        \"email\": \"dornu@dornu.com\",\r\n        \"addresses\": [\r\n            {\r\n                \"reference\": \"3b52cee7-5c83-48cc-b699-d21f24bd7f33\",\r\n                \"country\": \"UAE\",\r\n                \"state\": \"Dubai\",\r\n                \"city\": \"Dubai\",\r\n                \"address_lines\": [\r\n                    \"Dubai Silicon Oasis\"\r\n                ]\r\n            }\r\n        ]\r\n    },\r\n    \"security\": {\r\n        \"two_factor_auth_enabled\": true\r\n    },\r\n    \"bank_accounts\": [\r\n        {\r\n            \"reference\": \"56d485f9-a8db-45c9-861c-fafb7a7167d9\",\r\n            \"integration_type\": \"API_INTEGRATION\",\r\n            \"integration_reference\": \"cfafbb8a-35f1-4dea-8cab-f0cd67806615\",\r\n            \"account_name\": \"Dornu Ngbor\",\r\n            \"acccount_number\": \"1234567890\",\r\n            \"iban\": \"AE341234567890\",\r\n            \"bank_reference\": \"7c0d6636-ca94-4300-b001-84fe5f808a30\"\r\n        },\r\n        {\r\n            \"reference\": \"4583b35d-bdd0-496f-b439-c728bef5d4ec\",\r\n            \"integration_type\": \"GATEWAY_INTEGRATION\",\r\n            \"integration_reference\": \"c23038b4-e320-41a5-9bcf-b3680725ed6e\"\r\n        }\r\n    ],\r\n    \"income\": {\r\n        \"frequency\": \"MONTHLY\",\r\n        \"amount\": 50000,\r\n        \"currency\": \"AED\"\r\n    },\r\n    \"newsfeed_preferences\": [\r\n        {\r\n            \"service_reference\": \"97d758db-63d7-4a78-9e92-68f2d0969db6\",\r\n            \"show_in_newsfeed\": true,\r\n            \"only_show_status_types\": [\r\n                \"ACTIVE\",\r\n                \"INACTIVE\",\r\n                \"COMPLETED\",\r\n                \"CANCELLED\"\r\n            ]\r\n        },\r\n        {\r\n            \"service_reference\": \"14b21771-5efb-41e6-a92b-1be414b9092c\",\r\n            \"show_in_newsfeed\": false\r\n        }\r\n    ],\r\n    \"service_configurations\": [\r\n        {\r\n            \"service_reference\": \"87d90d0a-1457-4dbd-a382-df8a741c3cf0\",\r\n            \"bank_debit_notification_phone\": \"+971555555555\",\r\n            \"smart_save_goals\": [\r\n                {\r\n                    \"from\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 100\r\n                    },\r\n                    \"to\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 500\r\n                    },\r\n                    \"percent_to_save\": 5\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"service_reference\": \"87d90d0a-1457-4dbd-a382-df8a741c3cf0\",\r\n            \"subscribe\": true\r\n        }\r\n    ],\r\n    \"notification_options\": {\r\n        \"push_notification_enabled\": true,\r\n        \"notification_type\": \"RING_AND_VIBRATE\",\r\n        \"otp_type\": \"SEND_AS_SMS_ONLY\"\r\n    },\r\n    \"kyc_details\": {\r\n        \"is_verified\": true,\r\n        \"verified_on\": \"2021-08-30T07:40:00\",\r\n        \"verification_method\": \"BACKGROUND_CHECK|SECURITY_QUESTIONS\",\r\n        \"identification\": [\r\n            {\r\n                \"reference\": \"73b5041a-e67d-4f6f-944f-70c5b4e0fa1a\",\r\n                \"type\": \"INTERNATIONAL_PASSPORT\",\r\n                \"passport_number\": \"A001987654321\",\r\n                \"expiry\": \"12/12/2025\",\r\n                \"document_reference\": \"d1f2ac11-7e3c-4f9f-a5cf-ed697d461e56\"\r\n            },\r\n            {\r\n                \"refeerence\": \"b6e22660-ecfe-45a5-afdb-87479355d2d0\",\r\n                \"type\": \"EMIRATES_ID\",\r\n                \"emirates_id_number\": \"784-1900-1234567-1\",\r\n                \"expiry\": \"12/12/2025\",\r\n                \"document_reference\": \"a50245a2-20ac-4a2c-900b-b29729118a2c\"\r\n            }\r\n        ]\r\n    },\r\n    \"devices\": [\r\n        {\r\n            \"reference\": \"250e99ae-f246-4fd5-b030-a7b35a45f2c5\",\r\n            \"type\": \"MOBILE|DESKTOP|TABLET\",\r\n            \"device_id\": \"device-imei-serial-number\",\r\n            \"session_id\": \"bc3ed91d-9a1c-421c-99ab-a5518b85e64f\",\r\n            \"brand\": \"IPhone\",\r\n            \"model\": \"iPhone 7\",\r\n            \"os_version\": \"4.4.2\",\r\n            \"language\": \"en-us\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "user configuration - defaults",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"1bbc139f-c44e-44cf-80c7-0fa2d663d413\",\r\n    \"onboarding_reference\": \"cf384ac3-9a48-46af-b85f-76cf5e0073cc\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"enabled\": true,\r\n    \"user_profile\": {\r\n        \"username\": \"dornu@dornu.com\",\r\n        \"handle\": \"@dornu\",\r\n        \"firstname\": \"Dornu\",\r\n        \"lastname\": \"Ngbor\",\r\n        \"date_of_birth\": \"02/07/1900\",\r\n        \"phone\": \"+971555555555\",\r\n        \"email\": \"dornu@dornu.com\",\r\n        \"addresses\": []\r\n    },\r\n    \"security\": {\r\n        \"two_factor_auth_enabled\": true\r\n    },\r\n    \"bank_accounts\": [],\r\n    \"income\": {},\r\n    \"newsfeed_preferences\": [],\r\n    \"service_configurations\": [],\r\n    \"notification_options\": {\r\n        \"push_notification_enabled\": true,\r\n        \"notification_type\": \"RING_AND_VIBRATE\",\r\n        \"otp_type\": \"SEND_AS_SMS_ONLY\"\r\n    },\r\n    \"kyc_details\": {\r\n        \"is_verified\": false,\r\n        \"identification\": []\r\n    },\r\n    \"devices\": [\r\n        {\r\n            \"reference\": \"250e99ae-f246-4fd5-b030-a7b35a45f2c5\",\r\n            \"type\": \"MOBILE|DESKTOP|TABLET\",\r\n            \"device_id\": \"device-imei-serial-number\",\r\n            \"session_id\": \"bc3ed91d-9a1c-421c-99ab-a5518b85e64f\",\r\n            \"brand\": \"IPhone\",\r\n            \"model\": \"iPhone 7\",\r\n            \"os_version\": \"4.4.2\",\r\n            \"language\": \"en-us\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Create user configuration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Enable user configuration",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update user profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Add address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Update address",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Remove address",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "Enable two-factor authentication",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "secrets-service",
+			"item": [
+				{
+					"name": "secrets",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"2c4579d3-19ad-4117-a8e8-ddfa275de8b0\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"service_reference\": \"f87f0b19-041c-4f97-8d25-a64212fae238\",\r\n    \"name\": \"MONGODB_PASSWORD\",\r\n    \"value\": \"super-secure-password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "otp-service",
+			"item": [
+				{
+					"name": "otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"201b7a41-eca6-440c-94b8-293df4fb556c\",\r\n    \"code\": 123456,\r\n    \"strict\": true,\r\n    \"sent_at\": \"2021-08-26T07:38:00\",\r\n    \"expires_at\": \"2021-08-26T07:40:00\",\r\n    \"device_reference\": \"250e99ae-f246-4fd5-b030-a7b35a45f2c5\",\r\n    \"user_reference\": \"974ebef6-603c-41c1-8651-0c4861f8cf69\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "onboarding-service",
+			"item": [
+				{
+					"name": "onboarding",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"50db7c8a-1ca1-438c-8308-e2603a246cdf\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"phone\": \"+971555555555\",\r\n    \"email\": \"dornu@dornu.com\",\r\n    \"username\": \"dornu@dornu.com\",\r\n    \"signup_confirmed\": true,\r\n    \"devices\": {\r\n        \"reference\": \"250e99ae-f246-4fd5-b030-a7b35a45f2c5\",\r\n        \"type\": \"MOBILE|DESKTOP|TABLET\",\r\n        \"device_id\": \"device-imei-serial-number\",\r\n        \"session_id\": \"bc3ed91d-9a1c-421c-99ab-a5518b85e64f\",\r\n        \"brand\": \"IPhone\",\r\n        \"model\": \"iPhone 7\",\r\n        \"os_version\": \"4.4.2\",\r\n        \"language\": \"en-us\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transaction-service",
+			"item": [
+				{
+					"name": "transactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"b64356d6-bee6-4bc9-ae28-7843f1a9ddc0\",\r\n    \"service_reference\": \"cc496393-0c5f-4564-8b87-216f6bad3280\",\r\n    \"service_request_reference\": \"cdf65cfc-01e0-4e71-ae4d-4e6895e4fcdb\",\r\n    \"service_request_investor_reference\": \"4d76bf82-6c3d-4b06-9c69-b4c6c61c3333\",\r\n    \"transaction_datetime\": \"2021-08-26T07:40:00\",\r\n    \"transaction_type\": \"INVESTMENT_PAYMENT|REVENUE_PAYMENT\",\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 10000\r\n    },\r\n    \"remarks\": \"business loan investment\",\r\n    \"investor_account\": {\r\n        \"user_reference\": \"01c6bd3e-9208-4a24-82ce-1e3b13b05116\",\r\n        \"account_reference\": \"910e6170-1fcb-4119-92c1-a5f7d80d4c08\",\r\n        \"account_name\": \"Dornu Ngbor\",\r\n        \"acccount_number\": \"1234567890\",\r\n        \"iban\": \"AE341234567890\",\r\n        \"bank_reference\": \"7c0d6636-ca94-4300-b001-84fe5f808a30\"\r\n    },\r\n    \"investee_account\": {\r\n        \"user_reference\": \"a89edc1c-8655-421d-8bd2-e42b40a6bd99\",\r\n        \"account_reference\": \"39d3ea6a-1ce1-47f5-b2ac-3e2e18d576fa\",\r\n        \"account_name\": \"Nkenchor Osemeke\",\r\n        \"acccount_number\": \"0987654321\",\r\n        \"iban\": \"NG010987654321\",\r\n        \"bank_reference\": \"080a3eef-d78e-4570-a811-ef9002e725fb\"\r\n    },\r\n    \"status\": \"PENDING|SUCCESSFUL|FAILED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "identity-service",
+			"item": [
+				{
+					"name": "identity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"f8ce14ce-df96-4d1d-af2e-6cd8be626731\",\r\n    \"firstname\": \"Dornu\",\r\n    \"lastname\": \"Ngbor\",\r\n    \"email\": \"test@test.com\",\r\n    \"username\": \"test@test.com\",\r\n    \"password\": \"super-secret\",\r\n    \"roles\": [\r\n        \"ROLE_VERIFIED_USER\"\r\n    ],\r\n    \"devices\": [\r\n        \"device-imei-serial-number\"\r\n    ],\r\n    \"enabled\": true,\r\n    \"is_deleted\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "notification-service",
+			"item": [
+				{
+					"name": "notification",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"ca997c50-7ae3-42ba-859f-d53ba1579397\",\r\n    \"channel\": \"EMAIL\",\r\n    \"type\": \"SCHEDULED|INSTANT\",\r\n    \"from\": \"hello@angularpay.com\",\r\n    \"to\": \"dornu@dornu.com\",\r\n    \"message\": \"Thank you for signing up!\",\r\n    \"status\": \"PENDING|SENT\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "peer-service",
+			"item": [
+				{
+					"name": "peer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6d21378-048e-4794-b376-0fb1167c9ad7\",\r\n    \"handle\": \"@dornu\",\r\n    \"name\": \"Dornu Ngbor\",\r\n    \"location\": \"Dubai, UAE\",\r\n    \"verified\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "forex-service",
+			"item": [
+				{
+					"name": "forex",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"base\": \"USD\",\r\n    \"date\": \"2018-02-13\",\r\n    \"rates\": {\r\n        \"CAD\": 1.260046,\r\n        \"CHF\": 0.933058,\r\n        \"EUR\": 0.806942,\r\n        \"GBP\": 0.719154\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "documents-service",
+			"item": [
+				{
+					"name": "documents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"b48ba1e6-3903-4031-831b-590084d7dea8\",\r\n    \"owner_reference\": \"c45c351d-7a5c-4bfe-a68c-f317e35b6b0d\",\r\n    \"filename\": \"my-international-passport.jpg\",\r\n    \"file_description\": \"this is my international passport\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "newsfeed-service",
+			"item": [
+				{
+					"name": "newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pmtsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PMT\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"USD\",\r\n            \"to\": \"NGN\",\r\n            \"rate\": \"500\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"excahnge_rate\": {\r\n                        \"from\": \"USD\",\r\n                        \"to\": \"NGN\",\r\n                        \"rate\": \"510\"\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pfssep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PEER_FUND\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"XYZ Ltd business loan request\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"interest_rate_percent\": 5,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"interest_rate_percent\": 10\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@crysep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"CRYPTO\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"BTC\",\r\n            \"value\": 2\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"BTC\",\r\n            \"to\": \"USD\",\r\n            \"rate\": \"52000\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 32000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"excahnge_rate\": {\r\n                        \"from\": \"BTC\",\r\n                        \"to\": \"USD\",\r\n                        \"rate\": \"42000\"\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pthsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PITCH\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Unicron agro-tech early-growth company wants to expand its business\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 5000000\r\n        },\r\n        \"equity_percent\": 5,\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                }\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"equity_percent\": 25\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@supsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SUPPLY\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"ABC Contruction needs 5000 pieces of lumber supplies\",\r\n        \"commodity\": {\r\n            \"name\": \"lumber supplies\",\r\n            \"description\": \"lumber supplies\",\r\n            \"quantity\": 5000,\r\n            \"unit_price\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"total_amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"supplying\": {\r\n                    \"quantity\": 100,\r\n                    \"total_amount\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 10000\r\n                    }\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"unit_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 250\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@mensep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"MENIAL\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"summary\": \"Need a mechanic to fix my car\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 15000\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"amount\": {\r\n                        \"currency\": \"NGN\",\r\n                        \"value\": 45000\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pnbsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PAYNABLE\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 250000\r\n        },\r\n        \"interest_rate_percent\": 2,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"interest_rate_percent\": 5\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@ssvsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SMART_SAVE\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"spent_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 300\r\n        },\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"applicable_goal\": {\r\n            \"from\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"to\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500\r\n            },\r\n            \"save_percent\": 5\r\n        },\r\n        \"smart_save_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 15\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "newsfeed - latest",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pmtsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PMT\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"USD\",\r\n            \"to\": \"NGN\",\r\n            \"rate\": \"500\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"excahnge_rate\": {\r\n                        \"from\": \"USD\",\r\n                        \"to\": \"NGN\",\r\n                        \"rate\": \"510\"\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pefsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PEF\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"XYZ Ltd business loan request\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"interest_rate_percent\": 5,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"interest_rate_percent\": 10\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@ctosep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"CTO\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"BTC\",\r\n            \"value\": 2\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"BTC\",\r\n            \"to\": \"USD\",\r\n            \"rate\": \"52000\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 32000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"excahnge_rate\": {\r\n                        \"from\": \"BTC\",\r\n                        \"to\": \"USD\",\r\n                        \"rate\": \"42000\"\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pchsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PCH\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Unicron agro-tech early-growth company wants to expand its business\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 5000000\r\n        },\r\n        \"equity_percent\": 5,\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                }\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"equity_percent\": 25\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@stksep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"STK\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Invest in Tesla\",\r\n        \"unit_share_price\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 1000\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 55000\r\n                }\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@invsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"INV\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"last_modified\": \"2021-08-27T07:40:00\",\r\n        \"summary\": \"Purchased TV and stuff\",\r\n        \"invoice\": {\r\n            \"items\": [\r\n                {\r\n                    \"description\": \"TV\",\r\n                    \"quantity\": 2,\r\n                    \"unit_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 1000\r\n                    },\r\n                    \"total_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 2000\r\n                    }\r\n                }\r\n            ],\r\n            \"sub_total\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investor\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@supsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SUP\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"ABC Contruction needs 5000 pieces of lumber supplies\",\r\n        \"commodity\": {\r\n            \"name\": \"lumber supplies\",\r\n            \"description\": \"lumber supplies\",\r\n            \"quantity\": 5000,\r\n            \"unit_price\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"total_amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"supplying\": {\r\n                    \"quantity\": 100,\r\n                    \"total_amount\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 10000\r\n                    }\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"unit_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 250\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@mnlsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"MNL\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"summary\": \"Need a mechanic to fix my car\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 15000\r\n        },\r\n        \"service_client\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n        },\r\n        \"service_providers\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"amount\": {\r\n                        \"currency\": \"NGN\",\r\n                        \"value\": 45000\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pnbsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PNB\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"verified_on\": \"2021-08-30T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 250000\r\n        },\r\n        \"interest_rate_percent\": 2,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"interest_rate_percent\": 5\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@ssvsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SSV\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"spent_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 300\r\n        },\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"applicable_goal\": {\r\n            \"from\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"to\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500\r\n            },\r\n            \"save_percent\": 5\r\n        },\r\n        \"smart_save_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 15\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "reporting-service",
+			"item": [
+				{
+					"name": "user-requests",
+					"item": [
+						{
+							"name": "pmt-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pmtsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PMT\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"USD\",\r\n            \"to\": \"NGN\",\r\n            \"rate\": \"500\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "peerfund-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pfssep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PEER_FUND\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"XYZ Ltd business loan request\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"interest_rate_percent\": 5,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "crypto-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@crysep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"CRYPTO\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"BTC\",\r\n            \"value\": 2\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"BTC\",\r\n            \"to\": \"USD\",\r\n            \"rate\": \"52000\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 32000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "pitch-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pthsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PITCH\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Unicron agro-tech early-growth company wants to expand its business\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 5000000\r\n        },\r\n        \"equity_percent\": 5,\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false,\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                }\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "stock-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@stksep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"STOCKS\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Invest in Tesla\",\r\n        \"unit_share_price\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 1000\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false,\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 55000\r\n                }\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "invoice-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@invsep01211\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"last_modified\": \"2021-08-27T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Purchased TV and stuff\",\r\n        \"invoice\": {\r\n            \"items\": [\r\n                {\r\n                    \"description\": \"TV\",\r\n                    \"quantity\": 2,\r\n                    \"unit_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 1000\r\n                    },\r\n                    \"total_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 2000\r\n                    }\r\n                }\r\n            ],\r\n            \"sub_total\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investor\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "supply-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@supsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SUPPLY\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"ABC Contruction needs 5000 pieces of lumber supplies\",\r\n        \"commodity\": {\r\n            \"name\": \"lumber supplies\",\r\n            \"description\": \"lumber supplies\",\r\n            \"quantity\": 5000,\r\n            \"unit_price\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"total_amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"supplying\": {\r\n                    \"quantity\": 100,\r\n                    \"total_amount\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 10000\r\n                    }\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "menial-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@mensep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"MENIAL\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"summary\": \"Need a mechanic to fix my car\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 15000\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "paynable-requests",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pnbsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PAYNABLE\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 250000\r\n        },\r\n        \"interest_rate_percent\": 2,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"is_deleted\": false\r\n            }\r\n        ],\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "user-investments",
+					"item": [
+						{
+							"name": "pmt-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pmtsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PMT\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"USD\",\r\n            \"to\": \"NGN\",\r\n            \"rate\": \"500\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "peerfund-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pfssep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PEER_FUND\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"XYZ Ltd business loan request\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"interest_rate_percent\": 5,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "crypto-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@crysep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"CRYPTO\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"BTC\",\r\n            \"value\": 2\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"BTC\",\r\n            \"to\": \"USD\",\r\n            \"rate\": \"52000\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 32000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "pitch-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pthsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PITCH\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Unicron agro-tech early-growth company wants to expand its business\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 5000000\r\n        },\r\n        \"equity_percent\": 5,\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            }\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "stock-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@stksep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PITCH\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Invest in Tesla\",\r\n        \"unit_share_price\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 1000\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 55000\r\n            }\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "invoice-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@invsep01211\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"last_modified\": \"2021-08-27T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Purchased TV and stuff\",\r\n        \"invoice\": {\r\n            \"items\": [\r\n                {\r\n                    \"description\": \"TV\",\r\n                    \"quantity\": 2,\r\n                    \"unit_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 1000\r\n                    },\r\n                    \"total_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 2000\r\n                    }\r\n                }\r\n            ],\r\n            \"sub_total\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "supply-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@supsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SUPPLY\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"ABC Contruction needs 5000 pieces of lumber supplies\",\r\n        \"commodity\": {\r\n            \"name\": \"lumber supplies\",\r\n            \"description\": \"lumber supplies\",\r\n            \"quantity\": 5000,\r\n            \"unit_price\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"total_amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"supplying\": {\r\n                \"quantity\": 100,\r\n                \"total_amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 10000\r\n                }\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "menial-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@mensep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"MENIAL\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"summary\": \"Need a mechanic to fix my car\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 15000\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "paynable-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pnbsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PAYNABLE\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 250000\r\n        },\r\n        \"interest_rate_percent\": 2,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investment\": {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						},
+						{
+							"name": "smartsave-investments",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@ssvsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SMART_SAVE\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"spent_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 300\r\n        },\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"applicable_goal\": {\r\n            \"from\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"to\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500\r\n            },\r\n            \"save_percent\": 5\r\n        },\r\n        \"smart_save_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 15\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": null
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "search-service",
+			"item": [
+				{
+					"name": "search-results",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pmtsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PMT\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"USD\",\r\n            \"to\": \"NGN\",\r\n            \"rate\": \"500\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"excahnge_rate\": {\r\n                        \"from\": \"USD\",\r\n                        \"to\": \"NGN\",\r\n                        \"rate\": \"510\"\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pfssep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PEER_FUND\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"XYZ Ltd business loan request\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 10000\r\n        },\r\n        \"interest_rate_percent\": 5,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"interest_rate_percent\": 10\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@crysep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"CRYPTO\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"BTC\",\r\n            \"value\": 2\r\n        },\r\n        \"excahnge_rate\": {\r\n            \"from\": \"BTC\",\r\n            \"to\": \"USD\",\r\n            \"rate\": \"52000\",\r\n            \"date\": \"2018-02-13\",\r\n            \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 32000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"excahnge_rate\": {\r\n                        \"from\": \"BTC\",\r\n                        \"to\": \"USD\",\r\n                        \"rate\": \"42000\"\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pthsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PITCH\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"Unicron agro-tech early-growth company wants to expand its business\",\r\n        \"amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 5000000\r\n        },\r\n        \"equity_percent\": 5,\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                }\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"equity_percent\": 25\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@supsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SUPPLY\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"verified\": true,\r\n        \"summary\": \"ABC Contruction needs 5000 pieces of lumber supplies\",\r\n        \"commodity\": {\r\n            \"name\": \"lumber supplies\",\r\n            \"description\": \"lumber supplies\",\r\n            \"quantity\": 5000,\r\n            \"unit_price\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"total_amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500000\r\n            }\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"supplying\": {\r\n                    \"quantity\": 100,\r\n                    \"total_amount\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 10000\r\n                    }\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"unit_price\": {\r\n                        \"currency\": \"USD\",\r\n                        \"value\": 250\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@mensep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"MENIAL\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"summary\": \"Need a mechanic to fix my car\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 15000\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"amount\": {\r\n                        \"currency\": \"NGN\",\r\n                        \"value\": 45000\r\n                    }\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@pnbsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"PAYNABLE\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"amount\": {\r\n            \"currency\": \"NGN\",\r\n            \"value\": 250000\r\n        },\r\n        \"interest_rate_percent\": 2,\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"investors\": [\r\n            {\r\n                \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                },\r\n                \"created_on\": \"2021-08-26T07:40:00\"\r\n            }\r\n        ],\r\n        \"bargain\": {\r\n            \"offers\": [\r\n                {\r\n                    \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                    \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                    \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                    \"interest_rate_percent\": 5\r\n                }\r\n            ],\r\n            \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    },\r\n    {\r\n        \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"request_tag\": \"@ssvsep01211\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"service_code\": \"SMART_SAVE\",\r\n        \"created_on\": \"2021-08-26T07:40:00\",\r\n        \"spent_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 300\r\n        },\r\n        \"matures_on\": \"2021-08-26T07:40:00\",\r\n        \"applicable_goal\": {\r\n            \"from\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 100\r\n            },\r\n            \"to\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 500\r\n            },\r\n            \"save_percent\": 5\r\n        },\r\n        \"smart_save_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 15\r\n        },\r\n        \"investee\": {\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n        },\r\n        \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pmt-service",
+			"item": [
+				{
+					"name": "pmt-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pmtsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"verified\": false,\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 10000\r\n    },\r\n    \"exchange_rate\": {\r\n        \"from\": \"USD\",\r\n        \"to\": \"NGN\",\r\n        \"rate\": \"500\",\r\n        \"date\": \"2018-02-13\",\r\n        \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\",\r\n        \"bank_account_reference\": \"416c1ef7-c752-4a2f-8c36-051c06257383\"\r\n    },\r\n    \"beneficiary\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\",\r\n            \"investment_status\": {\r\n                \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n                \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n                \"transaction_datetime\": \"2021-08-29T07:40:00\"\r\n            }\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"exchange_rate\": {\r\n                    \"from\": \"USD\",\r\n                    \"to\": \"NGN\",\r\n                    \"rate\": \"510\"\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "pmt-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pmtsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"PMT\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 10000\r\n    },\r\n    \"exchange_rate\": {\r\n        \"from\": \"USD\",\r\n        \"to\": \"NGN\",\r\n        \"rate\": \"500\",\r\n        \"date\": \"2018-02-13\",\r\n        \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\"\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"exchange_rate\": {\r\n                    \"from\": \"USD\",\r\n                    \"to\": \"NGN\",\r\n                    \"rate\": \"510\"\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "user-service-requests",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"request_reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"request_created_on\": \"2021-08-26T07:40:00\",\r\n        \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "user-service-investments",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"request_reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n        \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n        \"request_created_on\": \"2021-08-26T07:40:00\",\r\n        \"user_reference\": \"836db867-98bb-4a1f-aa9e-9db76eac584a\",\r\n        \"investment_reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "peerfund-service",
+			"item": [
+				{
+					"name": "peerfund-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pefsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"verified\": true,\r\n    \"verified_on\": \"2021-08-30T07:40:00\",\r\n    \"summary\": \"XYZ Ltd business loan request\",\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 10000\r\n    },\r\n    \"interest_rate_percent\": 5,\r\n    \"matures_on\": \"2021-08-26T07:40:00\",\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\",\r\n            \"investment_status\": {\r\n                \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n                \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n                \"transaction_datetime\": \"2021-08-29T07:40:00\"\r\n            }\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"interest_rate_percent\": 10\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "peerfund-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pefsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"PEF\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"verified\": true,\r\n    \"summary\": \"XYZ Ltd business loan request\",\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 10000\r\n    },\r\n    \"interest_rate_percent\": 5,\r\n    \"matures_on\": \"2021-08-26T07:40:00\",\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\"\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"interest_rate_percent\": 10\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "crypto-service",
+			"item": [
+				{
+					"name": "crypto-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@ctosep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"amount\": {\r\n        \"currency\": \"BTC\",\r\n        \"value\": 2\r\n    },\r\n    \"exchange_rate\": {\r\n        \"from\": \"BTC\",\r\n        \"to\": \"USD\",\r\n        \"rate\": \"52000\",\r\n        \"date\": \"2018-02-13\",\r\n        \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 32000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\",\r\n            \"investment_status\": {\r\n                \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n                \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n                \"transaction_datetime\": \"2021-08-29T07:40:00\"\r\n            }\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"exchange_rate\": {\r\n                    \"from\": \"BTC\",\r\n                    \"to\": \"USD\",\r\n                    \"rate\": \"42000\"\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "crypto-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@ctosep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"CTO\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"amount\": {\r\n        \"currency\": \"BTC\",\r\n        \"value\": 2\r\n    },\r\n    \"exchange_rate\": {\r\n        \"from\": \"BTC\",\r\n        \"to\": \"USD\",\r\n        \"rate\": \"52000\",\r\n        \"date\": \"2018-02-13\",\r\n        \"type\": \"INVESTEE_RATE|BARGAIN_RATE|OFFICIAL_RATE\"\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 32000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\"\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"exchange_rate\": {\r\n                    \"from\": \"BTC\",\r\n                    \"to\": \"USD\",\r\n                    \"rate\": \"42000\"\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pitch-service",
+			"item": [
+				{
+					"name": "pitch-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pchsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"verified\": true,\r\n    \"verified_on\": \"2021-08-30T07:40:00\",\r\n    \"summary\": \"Unicron agro-tech early-growth company wants to expand its business\",\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 5000000\r\n    },\r\n    \"equity_percent\": 5,\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            }\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"equity_percent\": 25\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "pitch-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pchsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"PCH\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"verified\": true,\r\n    \"summary\": \"Unicron agro-tech early-growth company wants to expand its business\",\r\n    \"amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 5000000\r\n    },\r\n    \"equity_percent\": 5,\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            }\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"equity_percent\": 25\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "stock-service",
+			"item": [
+				{
+					"name": "stock-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@stksep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"verified\": true,\r\n    \"verified_on\": \"2021-08-30T07:40:00\",\r\n    \"summary\": \"Invest in Tesla\",\r\n    \"unit_share_price\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 1000\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"investment_status\": {\r\n                \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n                \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n                \"transaction_datetime\": \"2021-08-29T07:40:00\"\r\n            }\r\n        }\r\n    ],\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "stock-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@stksep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"STK\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"verified\": true,\r\n    \"summary\": \"Invest in Tesla\",\r\n    \"unit_share_price\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 1000\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 55000\r\n            }\r\n        }\r\n    ],\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "invoice-service",
+			"item": [
+				{
+					"name": "invoice-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@invsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"summary\": \"Purchased TV and stuff\",\r\n    \"invoice\": {\r\n        \"items\": [\r\n            {\r\n                \"description\": \"TV\",\r\n                \"quantity\": 2,\r\n                \"unit_price\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 1000\r\n                },\r\n                \"total_price\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                }\r\n            }\r\n        ],\r\n        \"sub_total\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 2000\r\n        }\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investor\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n        \"investment_status\": {\r\n            \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n            \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n            \"transaction_datetime\": \"2021-08-29T07:40:00\"\r\n        }\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "invoice-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@invsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"INV\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"summary\": \"Purchased TV and stuff\",\r\n    \"invoice\": {\r\n        \"items\": [\r\n            {\r\n                \"description\": \"TV\",\r\n                \"quantity\": 2,\r\n                \"unit_price\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 1000\r\n                },\r\n                \"total_price\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 2000\r\n                }\r\n            }\r\n        ],\r\n        \"sub_total\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 2000\r\n        }\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investor\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "supply-service",
+			"item": [
+				{
+					"name": "supply-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@supsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"verified\": true,\r\n    \"verified_on\": \"2021-08-30T07:40:00\",\r\n    \"summary\": \"ABC Contruction needs 5000 pieces of lumber supplies\",\r\n    \"commodity\": {\r\n        \"name\": \"lumber supplies\",\r\n        \"description\": \"lumber supplies\",\r\n        \"quantity\": 5000,\r\n        \"unit_price\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 100\r\n        },\r\n        \"total_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 500000\r\n        }\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n            \"supplying\": {\r\n                \"quantity\": 100,\r\n                \"total_amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 10000\r\n                }\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\"\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"unit_price\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 250\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "supply-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@supsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"SUP\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"verified\": true,\r\n    \"summary\": \"ABC Contruction needs 5000 pieces of lumber supplies\",\r\n    \"commodity\": {\r\n        \"name\": \"lumber supplies\",\r\n        \"description\": \"lumber supplies\",\r\n        \"quantity\": 5000,\r\n        \"unit_price\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 100\r\n        },\r\n        \"total_amount\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 500000\r\n        }\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"supplying\": {\r\n                \"quantity\": 100,\r\n                \"total_amount\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 10000\r\n                }\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\"\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"unit_price\": {\r\n                    \"currency\": \"USD\",\r\n                    \"value\": 250\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "menial-service",
+			"item": [
+				{
+					"name": "menial-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@mnlsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"summary\": \"Need a mechanic to fix my car\",\r\n    \"amount\": {\r\n        \"currency\": \"NGN\",\r\n        \"value\": 15000\r\n    },\r\n    \"service_client\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"service_providers\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\",\r\n            \"investment_status\": {\r\n                \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n                \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n                \"transaction_datetime\": \"2021-08-29T07:40:00\"\r\n            }\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"amount\": {\r\n                    \"currency\": \"NGN\",\r\n                    \"value\": 45000\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "menial-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@mnlsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"MNL\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"summary\": \"Need a mechanic to fix my car\",\r\n    \"amount\": {\r\n        \"currency\": \"NGN\",\r\n        \"value\": 15000\r\n    },\r\n    \"service_client\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"service_providers\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"created_on\": \"2021-08-26T07:40:00\"\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"amount\": {\r\n                    \"currency\": \"NGN\",\r\n                    \"value\": 45000\r\n                }\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "paynable-service",
+			"item": [
+				{
+					"name": "paynable-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pnbsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\",\r\n    \"verified\": true,\r\n    \"verified_on\": \"2021-08-30T07:40:00\",\r\n    \"amount\": {\r\n        \"currency\": \"NGN\",\r\n        \"value\": 250000\r\n    },\r\n    \"interest_rate_percent\": 2,\r\n    \"matures_on\": \"2021-08-26T07:40:00\",\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"bank_account_reference\": \"50feb3b1-e917-419a-aad6-c79095b73e16\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\",\r\n            \"is_deleted\": false,\r\n            \"deleted_by\": \"INVESTOR|TTL_SERVICE|PLATFORM\",\r\n            \"deleted_on\": \"2021-08-26T07:40:00\",\r\n            \"investment_status\": {\r\n                \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n                \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n                \"transaction_datetime\": \"2021-08-29T07:40:00\"\r\n            }\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"interest_rate_percent\": 5\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "paynable-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@pnbsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"PNB\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"verified\": true,\r\n    \"verified_on\": \"2021-08-30T07:40:00\",\r\n    \"amount\": {\r\n        \"currency\": \"NGN\",\r\n        \"value\": 250000\r\n    },\r\n    \"interest_rate_percent\": 2,\r\n    \"matures_on\": \"2021-08-26T07:40:00\",\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"investors\": [\r\n        {\r\n            \"reference\": \"1fdecf7a-fe4d-4273-b36e-0340e8535a5f\",\r\n            \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n            \"amount\": {\r\n                \"currency\": \"USD\",\r\n                \"value\": 2000\r\n            },\r\n            \"created_on\": \"2021-08-26T07:40:00\"\r\n        }\r\n    ],\r\n    \"bargain\": {\r\n        \"offers\": [\r\n            {\r\n                \"reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\",\r\n                \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n                \"status\": \"PENDING|ACCEPTED|REJECTED\",\r\n                \"interest_rate_percent\": 5\r\n            }\r\n        ],\r\n        \"accepted_bargain_reference\": \"19c0ec36-3989-452f-b135-e3dc00bdd025\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "smartsave-service",
+			"item": [
+				{
+					"name": "smartsave-request",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@ssvsep01211\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"spent_amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 300\r\n    },\r\n    \"matures_on\": \"2021-08-26T07:40:00\",\r\n    \"applicable_goal\": {\r\n        \"from\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 100\r\n        },\r\n        \"to\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 500\r\n        },\r\n        \"save_percent\": 5\r\n    },\r\n    \"smart_save_amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 15\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\",\r\n        \"bank_account_reference\": \"1f1e196e-e869-42a0-9e1e-2676e6dc55dc\"\r\n    },\r\n    \"investment_status\": {\r\n        \"transaction_reference\": \"27ed20c8-5dce-49d7-b30d-3ab3d8183bd9\",\r\n        \"status\": \"PENDING|SUCCESSFUL|FAILED\",\r\n        \"transaction_datetime\": \"2021-08-29T07:40:00\",\r\n        \"otp_reference\": \"49c6cd75-3733-4f4e-a187-3ea7bdc89c74\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "smartsave-request - newsfeed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"e6af6de9-e9fc-4b54-a841-7ed902bbe559\",\r\n    \"request_tag\": \"@ssvsep01211\",\r\n    \"service_reference\": \"988b4529-57ee-42d9-b12a-ab96c2233c92\",\r\n    \"service_code\": \"SSV\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"spent_amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 300\r\n    },\r\n    \"matures_on\": \"2021-08-26T07:40:00\",\r\n    \"applicable_goal\": {\r\n        \"from\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 100\r\n        },\r\n        \"to\": {\r\n            \"currency\": \"USD\",\r\n            \"value\": 500\r\n        },\r\n        \"save_percent\": 5\r\n    },\r\n    \"smart_save_amount\": {\r\n        \"currency\": \"USD\",\r\n        \"value\": 15\r\n    },\r\n    \"investee\": {\r\n        \"user_reference\": \"e40d6109-8371-4c86-a2ef-239e01866810\"\r\n    },\r\n    \"status\": \"ACTIVE|INACTIVE|COMPLETED|CANCELLED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "platform-service",
+			"item": [
+				{
+					"name": "services",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"fc10adc4-cee7-4067-904b-dfa2ec02a8f0\",\r\n    \"name\": \"peer-to-peer money transfer\",\r\n    \"tag_prefix\": \"pmt\",\r\n    \"description\": \"peer-to-peer money transfer\",\r\n    \"code\": \"PMT\",\r\n    \"enabled\": true,\r\n    \"payment_model\": \"INVESTOR_AND_INVESTEE|INVESTEE_ONLY\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "currencies",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"references\": \"301bc38c-ba2e-4a92-a186-8e289fd92144\",\r\n    \"name\": \"US Dollar\",\r\n    \"code\": \"USD\",\r\n    \"enabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "language",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"b48ba1e6-3903-4031-831b-590084d7dea8\",\r\n    \"comment_type\": \"GENERIC|SOLO_PAY|PEER_PAY|BARGAIN\",\r\n    \"template\": \"I don't know who you are, but I'll find you, and I'll give you $1,000\",\r\n    \"created_on\": \"2021-08-26T07:40:00\",\r\n    \"last_modified\": \"2021-08-27T07:40:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "banks",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"65a000fd-75ce-4a35-b870-a736c88e19ed\",\r\n    \"name\": \"AngularPay Bank\",\r\n    \"code\": \"APBK\",\r\n    \"country_reference\": \"e814f065-f514-4152-9d62-003b6a6c5f77\",\r\n    \"address\": \"AngularPay street Texas\",\r\n    \"swift_code\": \"AST101\",\r\n    \"enabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "countries",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"a389d386-96d4-4da0-928d-d426c5aaf013\",\r\n    \"name\": \"Nigeria\",\r\n    \"code\": \"234\",\r\n    \"iso_code_2\": \"NG\",\r\n    \"iso_code_3\": \"NGA\",\r\n    \"enabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "notification types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"ef4d417f-6190-41e6-9b3f-3216f702f6fb\",\r\n    \"code\": \"RING_AND_VIBRATE|RING_ONLY|VIBRATE_ONLY\",\r\n    \"enabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				},
+				{
+					"name": "otp types",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"reference\": \"8ce57de8-f602-4abf-8de7-5b429179b57d\",\r\n    \"code\": \"SEND_AS_SMS_ONLY|SEND_AS_EMAIL_ONLY|SEND_AS_SMS_AND_EMAIL\",\r\n    \"enabled\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test-snippets",
+			"item": [
+				{
+					"name": "concurrency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:20211/concurrency",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "20211",
+							"path": [
+								"concurrency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "redis-publisher",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Dee  King\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/publish",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"publish"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "redis-queue-producer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/produce",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"produce"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "redis-queue-consumer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "redis-queue-consumer sequential",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consume/sequential",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consume",
+								"sequential"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "redis-queue-consumer concurrent",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/consume/sequential",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"consume",
+								"sequential"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

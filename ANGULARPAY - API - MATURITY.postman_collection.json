@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "6d1da584-0626-4758-a9b9-a196b121fc3c",
+		"name": "ANGULARPAY - API - MATURITY",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Update paynable cron",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cron\": \"0 12 * * * ?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/maturity/cron/paynable/schedule",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"maturity",
+						"cron",
+						"paynable",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update peer-fund cron",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cron\": \"0 12 * * * ?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/maturity/cron/peer-fund/schedule",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"maturity",
+						"cron",
+						"peer-fund",
+						"schedule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update paynable SLA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"days\": 14\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/maturity/cron/paynable/sla",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"maturity",
+						"cron",
+						"paynable",
+						"sla"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update peer-fund SLA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"days\": 7\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/maturity/cron/peer-fund/sla",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"maturity",
+						"cron",
+						"peer-fund",
+						"sla"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run paynable cron now",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/maturity/cron/paynable/run",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"maturity",
+						"cron",
+						"paynable",
+						"run"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Run peer-fund cron now",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/maturity/cron/peer-fund/run",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"maturity",
+						"cron",
+						"peer-fund",
+						"run"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "http://localhost:20440"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "8d5b68de-9bae-4264-a8a5-365f29c5a749"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-id-001"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		}
+	]
+}

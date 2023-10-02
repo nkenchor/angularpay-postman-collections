@@ -1,0 +1,494 @@
+{
+	"info": {
+		"_postman_id": "23e6897e-043f-4e3e-8a60-422a3811062f",
+		"name": "ANGULARPAY - API - CIPHER",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "generate keys",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cipher/entries/generate-keys/count/5",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cipher",
+						"entries",
+						"generate-keys",
+						"count",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"cipherReference\", data.reference);\r",
+							"pm.collectionVariables.set(\"publicKey\", data.public_key);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cipher/entries",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cipher",
+						"entries"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Encrypt data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"encryptedString\", data.encrypted_string);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"plaintext\", \"In 1,2,3... Testing Rivest–Shamir–Adleman (RSA) asymmetric cryptographic algorithm\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{plaintext}}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cipher/entries/{{cipherReference}}/encrypt",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cipher",
+						"entries",
+						"{{cipherReference}}",
+						"encrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Decrypt data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"decryptedString\", data.decrypted_string);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{encryptedString}}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cipher/entries/{{cipherReference}}/decrypt",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cipher",
+						"entries",
+						"{{cipherReference}}",
+						"decrypt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sign data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var data = JSON.parse(responseBody)\r",
+							"pm.collectionVariables.set(\"signature\", data.signature);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{plaintext}}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cipher/entries/{{cipherReference}}/sign",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cipher",
+						"entries",
+						"{{cipherReference}}",
+						"sign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verify signature",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-cipher-signature",
+						"value": "{{signature}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-cipher-reference",
+						"value": "{{cipherReference}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{{plaintext}}",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cipher/entries/{{cipherReference}}/verify",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cipher",
+						"entries",
+						"{{cipherReference}}",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recycle",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-angularpay-username",
+						"value": "{{angularpay-username}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-user-reference",
+						"value": "{{angularpay-user-reference}}",
+						"type": "text"
+					},
+					{
+						"key": "x-angularpay-device-id",
+						"value": "{{angularpay-device-id}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{angularpay-api-gateway}}/cipher/entries/{{cipherReference}}/recycle",
+					"host": [
+						"{{angularpay-api-gateway}}"
+					],
+					"path": [
+						"cipher",
+						"entries",
+						"{{cipherReference}}",
+						"recycle"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "angularpay-api-gateway",
+			"value": "http://localhost:20420"
+		},
+		{
+			"key": "angularpay-username",
+			"value": "dornu"
+		},
+		{
+			"key": "angularpay-user-reference",
+			"value": "8d5b68de-9bae-4264-a8a5-365f29c5a749"
+		},
+		{
+			"key": "angularpay-device-id",
+			"value": "dornu-device-id-001"
+		},
+		{
+			"key": "requestReference",
+			"value": ""
+		},
+		{
+			"key": "cipherReference",
+			"value": ""
+		},
+		{
+			"key": "publicKey",
+			"value": ""
+		},
+		{
+			"key": "plainTextString",
+			"value": ""
+		},
+		{
+			"key": "encryptedString",
+			"value": ""
+		},
+		{
+			"key": "decryptedString",
+			"value": ""
+		},
+		{
+			"key": "signature",
+			"value": ""
+		},
+		{
+			"key": "plaintext",
+			"value": ""
+		}
+	]
+}
